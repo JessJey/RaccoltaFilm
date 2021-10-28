@@ -25,6 +25,8 @@ public class ExecuteListRegistaServlet extends HttpServlet {
 			String operationResult = request.getParameter("operationResult");
 			if(StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("SUCCESS"))
 				request.setAttribute("successMessage", "Operazione effettuata con successo");
+			if (StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("FILMASSOCIATI"))
+				request.setAttribute("errorMessage", "Attenzione, cancellare prima i film associati al regista!");
 			
 			request.setAttribute("registi_list_attribute",
 					MyServiceFactory.getRegistaServiceInstance().listAllElements());

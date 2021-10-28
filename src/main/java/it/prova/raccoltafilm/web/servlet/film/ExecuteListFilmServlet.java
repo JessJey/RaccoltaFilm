@@ -28,8 +28,7 @@ public class ExecuteListFilmServlet extends HttpServlet {
 				request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
 			if (StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("NOT_FOUND"))
 				request.setAttribute("errorMessage", "Elemento non trovato.");
-			if (StringUtils.isNotBlank(operationResult) && operationResult.equalsIgnoreCase("FILMASSOCIATI"))
-				request.setAttribute("errorMessage", "Attenzione, cancellare prima i film associati al regista!");
+			
 
 			request.setAttribute("film_list_attribute", MyServiceFactory.getFilmServiceInstance().listAllElements());
 		} catch (Exception e) {
